@@ -20,13 +20,24 @@ class Modal {
   static closeModal() {
     const modal = Modal.getInstance()
     if (modal) {
-      modal.style.display = 'none'
+      // 关闭缩放，由大变小
+      requestAnimationFrame(() => {
+        modal.style.transform = 'scale(0)'
+      }, 0)
+      // 最后消失
+      setTimeout(() => {
+        modal.style.display = 'none'
+      }, 500)
     }
   }
   static openModal() {
     const modal = Modal.getInstance()
     if (modal) {
       modal.style.display = 'block'
+      // 打开缩放，由小变大
+      requestAnimationFrame(() => {
+        modal.style.transform = 'scale(1)'
+      }, 0)
     }
   }
 }

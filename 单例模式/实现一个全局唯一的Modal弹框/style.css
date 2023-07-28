@@ -1,11 +1,8 @@
 @charset "UTF-8";
 
 button {
-  display: inline-flex;
   width: 88px;
   padding: 4px 16px;
-  justify-content: center;
-  align-items: center;
   border-radius: 4px;
   background: #3D87FF;
   border: none;
@@ -14,7 +11,6 @@ button {
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -26,13 +22,17 @@ button#open:hover, button#close:hover {
 }
 #modal {
   position: fixed;
-  left: 50%;
-  top: 50%;
-  min-width: 600px;
-  min-height: 400px;
+  width: 600px;
+  height: 400px;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
   padding: 4px;
   line-height: 400px;
-  transform: translate(-50%, -50%);
+  transform: scale(0);
+  transition: all 0.2s ease;
   border-radius: 8px;
   text-align: center;
   background-color: #fff;
